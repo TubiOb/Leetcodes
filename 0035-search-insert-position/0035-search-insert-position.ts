@@ -4,13 +4,10 @@ function searchInsert(nums: number[], target: number): number {
         if (char === target) {
             return i;
         }
-        else if (!nums.includes(target)) {
-            console.log(nums)
-            nums.push(target);
-            console.log(nums)
-            nums.sort((a, b) => a - b);
-            console.log(nums)
-            return nums.indexOf(target)
-        }
+    }
+    if (!nums.includes(target)) {
+        nums.push(target);
+        nums.sort((a, b) => a - b);
+        return nums.indexOf(target)
     }
 };

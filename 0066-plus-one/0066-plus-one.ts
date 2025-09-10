@@ -1,9 +1,14 @@
 function plusOne(digits: number[]): number[] {
-    let int = BigInt(digits.join(''))
-    console.log(int)
-    int++;
-    console.log(int)
-    const digitArray = Array.from(String(int), Number);
-    console.log(digitArray)
-    return digitArray;
+    for (let i = digits.length - 1; i >= 0; i--) {
+        if (digits[i] < 9) {
+            digits[i]++;
+            return digits;
+        }
+        digits[i] = 0;
+    }
+    return [1, ...digits];
+    // let int = BigInt(digits.join(''))
+    // int++;
+    // const digitArray = Array.from(String(int), Number);
+    // return digitArray;
 };
